@@ -1,0 +1,846 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;700;800&display=swap');
+/* --- General Styling (সাধারণ স্টাইল) --- */
+body {
+    font-family: 'Lato', sans-serif; /* <-- এই লাইনটি পরিবর্তন হয়েছে */
+    line-height: 1.6;
+    background-color: #ffffff;
+    
+  
+
+}
+body.inner-page {
+    padding-top: 70px !important;
+}
+h1, h2, h3, h4, h5, h6, .navbar-brand, .card-title {
+    font-family: 'Poppins', sans-serif; /* <-- নতুন ফন্ট যোগ হয়েছে */
+    font-weight: 700; /* ডিফল্ট bold এর পরিবর্তে 700 ব্যবহার করা হলো */
+}
+
+/* --- Navbar Styling (নেভিগেশন বার) --- */
+/* --- নতুন কোড: Navbar-এর নতুন ব্যাকগ্রাউন্ড রঙের জন্য --- */
+.navbar-custom {
+    background-color: #0d2c4e; /* একটি সুন্দর এবং পেশাদার নেভি ব্লু রঙ */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+/* --- Navbar Link Color & Hover Effect --- */
+
+/* Navbar-এর লিঙ্কগুলোর রঙ আরও উজ্জ্বল করার জন্য */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9); /* সাদাকে আরও উজ্জ্বল করা হলো */
+    font-weight: 500;
+    transition: all 0.3s ease; /* হোভার এফেক্টকে মসৃণ করার জন্য */
+}
+
+/* মাউস হোভার করলে লিঙ্কগুলোর রঙ পরিবর্তন হবে এবং উপরে উঠবে */
+.navbar-custom .navbar-nav .nav-link:hover {
+    color: #ffffff; /* হোভার করলে রঙটি পুরোপুরি সাদা হবে */
+    transform: translateY(-2px); /* লিঙ্কটি হালকা উপরে উঠবে */
+}
+
+/* --- New Accent Color for Buttons --- */
+.btn-primary, .btn-success {
+    background-color: #28a745; /* আকর্ষণীয় সবুজ রঙ */
+    border-color: #28a745;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.btn-primary:hover, .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+
+
+/* --- Hero Section Styling for Video (ভিডিওর জন্য নতুন CSS) --- */
+.hero-section {
+    height: 85vh; /* স্ক্রিনের ৮৫% উচ্চতা নেবে */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* ভেতরের কন্টেন্ট পজিশন করার জন্য */
+    overflow: hidden; /* সেকশনের বাইরে কিছু চলে গেলে তা হাইড করবে */
+}
+
+/* ভিডিওর উপর ডার্ক ওভারলে */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* ہلکا কালো রঙ */
+    z-index: 1;
+}
+
+/* ব্যাকগ্রাউন্ড ভিডিওর স্টাইল */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 0; /* ওভারলের নিচে থাকবে */
+}
+
+/* হিরো সেকশনের কন্টেন্ট (লেখা ও বাটন) */
+.hero-content {
+    position: relative;
+    z-index: 2; /* ভিডিও এবং ওভারলের উপরে থাকবে */
+    max-width: 800px;
+}
+
+.hero-section h1 { 
+    font-size: 4rem; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
+}
+.hero-section p { 
+    font-size: 1.5rem; 
+    margin-bottom: 2rem; 
+}
+.hero-section .btn { 
+    padding: 1rem 2rem; 
+    font-size: 1.2rem; 
+    border-radius: 50px; 
+}
+/* --- ভিডিওর জন্য CSS শেষ --- */
+
+/* --- Package Card Styling (প্যাকেজ কার্ড) --- */
+.package-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+.package-card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+.package-card .card-img-top { height: 220px; object-fit: cover; }
+.package-card .card-body { padding: 1.5rem; }
+.package-card .card-title { font-weight: bold; color: #333; }
+.package-card .price { 
+    font-size: 1.2rem; 
+    font-family: 'Poppins', sans-serif; /* <-- হেডিং ফন্ট যোগ হয়েছে */
+    font-weight: 700; 
+    color: #28a745; /* <-- রঙ পরিবর্তন হয়েছে */
+}
+
+/* --- Footer Styling (ফুটার) --- */
+.footer-area {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+
+/* --- Signup & Login Page Styling --- */
+.auth-page-wrapper {
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15rem; /* Navbar-এর জন্য উপরে জায়গা তৈরি করা হলো */
+    padding-bottom: 13rem; /* নিচের দিকে কিছুটা জায়গা রাখা হলো */
+}
+
+.auth-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* ছবির গোলাকার কোণগুলো ঠিক রাখার জন্য */
+}
+
+.auth-image-section {
+    background-image: url('../images/signup-image.jpg'); /* এই ছবিটি আমরা পরের ধাপে যোগ করব */
+    background-size: cover;
+    background-position: center;
+}
+
+.auth-form-section {
+    padding: 3rem;
+}
+
+/* ইনপুট ফিল্ডের ভেতরে আইকন বসানোর জন্য স্টাইল */
+.input-group-text {
+    background-color: transparent;
+    border-right: 0;
+}
+
+.form-control {
+    border-left: 0;
+}
+
+/* --- Login Page Specific Image --- */
+.login-image-section {
+    background-image: url('../images/login-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/* --- Contact Page Styling --- */
+.contact-wrapper {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.contact-info {
+    background-color: #0d2c4e; /* Navbar-এর নেভি ব্লু রঙ ব্যবহার করা হয়েছে */
+    color: #ffffff;
+    padding: 3rem;
+    height: 100%;
+}
+
+.contact-info h3 {
+    color: #ffffff;
+}
+
+.contact-info p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-info .icon {
+    width: 40px;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.contact-form-section {
+    padding: 3rem;
+}
+
+
+/* --- About Us Page Styling --- */
+.about-section-spacing {
+    padding: 4rem 0;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.feature-box .icon {
+    font-size: 3rem;
+    color: #0d2c4e; /* Navy Blue Color from Navbar */
+    margin-bottom: 1.5rem;
+}
+
+.team-member-card {
+    text-align: center;
+}
+
+.team-member-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 5px solid #fff;
+}
+
+.cta-section {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+}
+
+/* --- About Us Page Text Styling --- */
+.about-text-content .lead {
+    font-size: 1.2rem;   /* লিড প্যারাগ্রাফটিকে একটু বড় করা হলো */
+    margin-bottom: 1.5rem;
+}
+
+.about-text-content p {
+    font-size: 1.1rem;   /* সাধারণ প্যারাগ্রাফের ফন্ট সাইজ বাড়ানো হলো */
+    line-height: 1.8;    /* লাইনগুলোর মধ্যে দূরত্ব বাড়ানো হলো */
+}
+
+
+/* --- New Footer Design --- */
+.site-footer {
+    background-color:  #0d2c4e; /* A dark brown color similar to the image */
+    color: #d2c8be; /* A light, soft text color */
+    padding: 3rem 0;
+    font-size: 0.9rem;
+     margin-top: auto;
+}
+
+.site-footer h6 {
+    color: #e7e0e0;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.site-footer ul li {
+    margin-bottom: 0.75rem;
+}
+
+.site-footer ul li a {
+    color: #d2c8be;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.site-footer ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    margin-left: 10px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    background-color: #ffffff;
+    color: #070400;
+}
+
+.footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+}
+
+.footer-bottom {
+    font-size: 0.85rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom .list-inline-item {
+    margin-right: 1.5rem;
+}
+
+.footer-bottom .list-inline-item:last-child {
+    margin-right: 0;
+}
+
+/* --- Change Password Page Specific Image --- */
+.change-pass-image-section {
+    background-image: url('../images/change-pass-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+/* --- Profile Page Styling --- */
+.profile-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+}
+
+.profile-nav-tabs .nav-link {
+    color: #495057;
+    font-weight: 500;
+}
+
+.profile-nav-tabs .nav-link.active {
+    font-weight: bold;
+    color: #0d2c4e;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.profile-info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-info-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-info-list li:last-child {
+    border-bottom: none;
+}
+
+.profile-info-list li strong {
+    width: 150px;
+    display: inline-block;
+    color: #6c757d;
+}
+
+
+/* --- Why Choose Us Section Styling --- */
+
+.why-choose-us-section {
+    background-color: #ffffff; /* সেকশনের জন্য সাদা ব্যাকগ্রাউন্ড */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #e9ecef; /* একটি হালকা বর্ডার */
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* উন্নত হোভার ইফেক্ট */
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* রঙিন এবং আকর্ষণীয় আইকন স্টাইল */
+.feature-box .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    color: #ffffff; /* আইকনের রঙ সাদা */
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* প্রতিটি আইকনের জন্য ভিন্ন ভিন্ন ব্যাকগ্রাউন্ড রঙ */
+.why-choose-us-section .row .col-md-4:nth-child(1) .feature-box .icon {
+    background-color: #28a745; /* আকর্ষণীয় সবুজ */
+}
+.why-choose-us-section .row .col-md-4:nth-child(2) .feature-box .icon {
+    background-color: #17a2b8; /* আকর্ষণীয় নীল */
+}
+.why-choose-us-section .row .col-md-4:nth-child(3) .feature-box .icon {
+    background-color: #ffc107; /* আকর্ষণীয় হলুদ */
+}
+
+/* হোভার করলে আইকনটি ہلکا ঘুরবে */
+.feature-box:hover .icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* --- Testimonials Section Styling --- */
+.testimonials-section { 
+    background-color: #f8f9fa; 
+}
+
+/* --- Testimonials Section Styling (Updated) --- */
+.testimonials-section { 
+    background-color: #f8f9fa; 
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px; /* কোণাগুলো আরও গোলাকার করা হলো */
+    text-align: center;
+    height: 100%; 
+    border: 1px solid #f0f0f0; /* একটি হালকা বর্ডার যোগ করা হলো */
+    
+    /* আপনার অনুরোধ অনুযায়ী নতুন শ্যাডো এবং হোভার এফেক্ট */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px); /* হোভার করলে কার্ডটি উপরে উঠবে */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* শ্যাডো আরও গাঢ় হবে */
+}
+
+/* ===== এই অংশটি নিশ্চিতভাবে ছবিগুলোকে গোলাকার করবে ===== */
+.testimonial-card img {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    margin: 0 auto 1rem auto !important;
+    border: 4px solid #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #6c757d;
+}
+.customer-name {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+/* --- Newsletter Section Styling --- */
+.newsletter-section {
+    background-color: #0d2c4e; /* Navbar color */
+    color: #fff;
+}
+.newsletter-section .form-control {
+    height: 50px;
+    border-radius: 50px 0 0 50px;
+    border: none;
+}
+.newsletter-section .btn {
+    height: 50px;
+    border-radius: 0 50px 50px 0;
+}
+
+/* --- Carousel Styling --- */
+.packages-carousel .item, .testimonial-carousel .item {
+    padding: 0 15px; /* Add some spacing between carousel items */
+}
+.packages-carousel .card {
+    margin-bottom: 30px; /* Ensure shadow is not cut off */
+}
+/* Owl Carousel Navigation Buttons Styling */
+.owl-nav {
+    margin-top: 20px !important;
+    text-align: center;
+}
+.owl-nav button.owl-prev, .owl-nav button.owl-next {
+    font-size: 2rem !important;
+    margin: 0 10px !important;
+    color: #0d2c4e !important;
+}
+.owl-dots {
+    margin-top: 15px !important;
+}
+.owl-dots .owl-dot.active span {
+    background-color: #0d2c4e !important;
+}
+
+/* --- Section Styling for Alternating Backgrounds --- */
+.why-choose-us-section, 
+.popular-packages, 
+.testimonials-section, 
+.meet-guide-section,
+.newsletter-section {
+    padding: 5rem 0; /* সব সেকশনে সমান স্পেসিং দেওয়া হলো */
+}
+
+/* সাদা ব্যাকগ্রাউন্ডের সেকশন (Default) */
+.why-choose-us-section, .testimonials-section {
+    background-color: #ffffff;
+}
+
+/* হালকা ধূসর ব্যাকগ্রাউন্ডের সেকশন */
+.popular-packages, .meet-guide-section {
+    background-color: #f8f9fa; /* Bootstrap's 'bg-light' color */
+}
+/* --- Footer Payment Logos Styling --- */
+.footer-payment-logos .payment-logo {
+    height: 28px; /* সব লোগোর উচ্চতা সমান রাখা হলো */
+    width: auto;
+    background-color: #fff; /* স্বচ্ছ ব্যাকগ্রাউন্ডের লোগোর জন্য */
+    border-radius: 4px;
+    padding: 2px;
+    margin-right: 8px; /* লোগোগুলোর মধ্যে ফাঁকা জায়গা */
+    margin-bottom: 8px;
+}
+/* --- Footer Payment Logos Styling --- */
+.footer-payment-logos .payment-logo {
+    height: 28px; /* সব লোগোর উচ্চতা ২৮ পিক্সেলে সীমাবদ্ধ করা হলো */
+    width: auto;  /* উচ্চতার সাথে প্রস্থের অনুপাত ঠিক থাকবে */
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+/* --- Footer Payment Logos Styling --- */
+
+.footer-payment-logos {
+    text-align: right; /* এই লাইনটি লেখা ও লোগোগুলোকে ডান দিকে নিয়ে যাবে */
+}
+
+.footer-payment-logos .payment-logo {
+    height: 28px;
+    width: auto;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2px;
+    margin-right: 0;      /* ডান পাশ থেকে শুরু হওয়ায় ডান দিকে মার্জিন দরকার নেই */
+    margin-left: 8px;       /* এখন বাম দিকে মার্জিন দেওয়া হলো */
+    margin-bottom: 8px;
+}
+/* --- Footer Payment Logos Styling --- */
+/* ... (আগের কোড) ... */
+
+.footer-payment-logos .payment-logo {
+    height: 28px;
+    width: auto;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2px;
+    margin: 0 4px 8px 4px;
+    
+    /* নতুন: হোভার ইফেক্টের জন্য ট্রানজিশন যোগ করা হলো */
+    transition: all 0.3s ease; 
+    cursor: pointer; /* মাউস কার্সর পরিবর্তনের জন্য */
+}
+
+/* নতুন: হোভার স্টাইল */
+.footer-payment-logos .payment-logo:hover {
+    transform: translateY(-5px); /* মাউস নিলে ৫ পিক্সেল উপরে উঠবে */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* একটি হালকা ছায়া যোগ হবে */
+}
+/* --- Star Rating Display Styling --- */
+.display-stars {
+    color: #ffc107; /* হলুদ রঙ */
+    font-size: 1rem;
+}
+
+/* --- Success Page Styling --- */
+.success-icon {
+    display: inline-flex;
+    width: 80px;
+    height: 80px;
+    background-color: #e8f5e9; /* হালকা সবুজ ব্যাকগ্রাউন্ড */
+    color: #28a745; /* গাঢ় সবুজ আইকন */
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+}
+
+
+
+
+/* Animated Stats Section Styling */
+.stats-section {
+    padding: 4rem 0;
+    background-color: #ffffff; /* আপনার অনুরোধ অনুযায়ী সাদা ব্যাকগ্রাউন্ড */
+}
+
+.stat-card {
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    background-color: #f8f9fa; /* কার্ডের জন্য হালকা ধূসর ব্যাকগ্রাউন্ড */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* আপনার অনুরোধ অনুযায়ী শ্যাডো */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* হোভারের জন্য ট্রানজিশন */
+}
+
+.stat-card:hover {
+    transform: translateY(-10px); /* হোভার করলে কার্ড উপরে উঠবে */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* হোভার করলে শ্যাডো আরও গাঢ় হবে */
+}
+
+.stat-card h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #0d2c4e; /* আপনার সাইটের নেভি ব্লু রঙ */
+}
+
+.stat-card p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+
+
+
+/* Stats Section Icon Styling */
+.stat-card .stat-icon {
+    font-size: 2.5rem;
+    color: #28a745; /* সবুজ রঙ ব্যবহার করা হলো */
+    margin-bottom: 1rem;
+}
+
+/* Guide Section Icon Styling */
+.team-member-card .fa-award {
+    color: #ffc107; /* সোনালী রঙ */
+    margin-right: 5px;
+}
+
+
+
+/* Meet Our Guides Card Styling */
+.guide-card {
+    background-color: #ffffff;
+    border-radius: 15px; /* গোলাকার কোণা */
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* আপনার অনুরোধ অনুযায়ী শ্যাডো */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* হোভার এফেক্টের জন্য */
+    height: 100%;
+}
+
+/* হোভার এফেক্ট */
+.guide-card:hover {
+    transform: translateY(-10px); /* মাউস রাখলে উপরে উঠবে */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* শ্যাডো আরও গাঢ় হবে */
+}
+
+/* গাইডের ছবির স্টাইল */
+.guide-card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: -80px; /* কার্ডের একটু উপরে দেখানোর জন্য */
+    margin-bottom: 1rem;
+}
+
+/* গাইডের নাম ও পদবীর স্টাইল */
+.guide-card .guide-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.guide-card .guide-specialty {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.guide-card .guide-specialty .fa-award {
+    color: #ffc107;
+    margin-right: 5px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content-wrapper {
+    flex: 1;
+}
+
+.site-footer {
+    flex-shrink: 0;
+}
+
+
+
+
+
+
+
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: #fff; /* icon color will be white */
+}
+
+/* আলাদা আলাদা স্টাইল */
+.style-one {
+    background-color: #28a745; /* Green */
+}
+
+.style-two {
+    background-color: #17a2b8; /* Teal/Blue */
+}
+
+.style-three {
+    background-color: #ffc107; /* Yellow */
+}
+/* Stepper with Animated Progress */
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 30px 0;
+}
+
+.stepper::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #dee2e6;
+  z-index: 0;
+}
+
+.stepper .progress-line {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 4px;
+  background: #28a745;
+  width: 0;
+  z-index: 1;
+  transition: width 1s ease; /* animation */
+}
+
+.step {
+  text-align: center;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.step .circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #dee2e6;
+  margin: 0 auto;
+  line-height: 40px;
+  color: #6c757d;
+  font-size: 18px;
+}
+
+.step.active .circle,
+.step.completed .circle {
+  background: #28a745;
+  color: #fff;
+}
+
+.step .label {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.step.active .label,
+.step.completed .label {
+  color: #28a745;
+  font-weight: 600;
+}

@@ -1,0 +1,30 @@
+/* --- General Body & Layout --- */
+body {
+    background-color: #f0f2f5; 
+    font-family: Arial, sans-serif;
+}
+.wrapper { display: flex; width: 100%; align-items: stretch; }
+#content { width: 100%; padding: 20px 30px; min-height: 100vh; transition: all 0.3s; }
+
+/* --- Sidebar Styling --- */
+#sidebar { min-width: 250px; max-width: 250px; background: #2c3e50; color: #fff; transition: all 0.3s; }
+#sidebar.active { margin-left: -250px; }
+.sidebar-header { padding: 20px; background: #1f2c39; text-align: center; }
+.sidebar-header img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db; }
+.sidebar-header h3 { margin: 10px 0 0; font-size: 1.2rem; }
+#sidebar ul.components { padding: 20px 0; }
+#sidebar ul li a { padding: 12px 20px; font-size: 1.1em; display: block; color: #adb5bd; text-decoration: none; transition: all 0.3s; }
+#sidebar ul li a:hover { color: #ffffff; background: #34495e; }
+#sidebar ul li a i { margin-right: 10px; }
+#sidebar ul li a.active { color: #fff; background: #1f2c39; }
+
+/* --- Topbar Styling --- */
+.navbar.bg-light { background-color: #ffffff !important; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+
+/* --- Dashboard Card Styling --- */
+.dashboard-card { border: none; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease; color: #fff; }
+.dashboard-card:hover { transform: translateY(-5px); }
+.dashboard-card .card-body { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; }
+.dashboard-card .card-content .card-text { font-size: 1rem; font-weight: bold; margin: 0; opacity: 0.9; }
+.dashboard-card .card-content .card-title { font-size: 2.5rem; font-weight: bold; margin: 0; }
+.dashboard-card .card-icon i { font-size: 3.5rem; opacity: 0.3; }

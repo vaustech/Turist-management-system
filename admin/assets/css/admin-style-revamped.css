@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- Root Variables for Modern Color Scheme --- */
+:root {
+    --primary-color: #3B82F6; /* A vibrant blue */
+    --primary-dark: #2563EB;
+    --secondary-color: #10B981; /* A fresh green */
+    --background-color: #F3F4F6; /* Light gray background */
+    --sidebar-bg: #1F2937; /* Dark sidebar */
+    --card-bg: #FFFFFF;
+    --text-color: #374151;
+    --text-light: #6B7280;
+    --border-color: #E5E7EB;
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* --- General Styling with New Typography --- */
+body {
+    background-color: var(--background-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+#content {
+    width: 100%;
+    padding: 24px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+h2, h3, h4 {
+    font-weight: 600;
+}
+
+/* --- Sidebar Styling --- */
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: var(--sidebar-bg);
+    color: #fff;
+    transition: all 0.3s;
+}
+#sidebar.active {
+    margin-left: -250px;
+}
+.sidebar-header {
+    padding: 20px;
+    background: #111827;
+    text-align: center;
+}
+#sidebar ul li a {
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: #D1D5DB;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+#sidebar ul li a:hover {
+    color: #FFFFFF;
+    background: #374151;
+    border-left: 3px solid var(--primary-color);
+}
+#sidebar ul li a.active {
+    color: #FFFFFF;
+    background: #111827;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* --- Revamped Dashboard Card Design --- */
+.dashboard-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.dashboard-card .card-content .card-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+.dashboard-card .card-content .card-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+.dashboard-card .card-icon {
+    font-size: 2.5rem;
+    padding: 15px;
+    border-radius: 50%;
+    color: #fff;
+}
+
+/* Icon specific colors */
+.icon-users { background: linear-gradient(45deg, #3B82F6, #60A5FA); }
+.icon-packages { background: linear-gradient(45deg, #10B981, #34D399); }
+.icon-bookings { background: linear-gradient(45deg, #F59E0B, #FBBF24); }
+.icon-queries { background: linear-gradient(45deg, #EF4444, #F87171); }
+.icon-testimonials { background: linear-gradient(45deg, #8B5CF6, #A78BFA); }
